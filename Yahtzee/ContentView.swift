@@ -455,7 +455,7 @@ struct ContentView: View {
                                 .fontWeight(.bold)
                         }
                         
-                    }.frame(height: 330).listStyle(.grouped)
+                    }.listStyle(.grouped)
                         .alert(isPresented: $showingAlert) {
                             Alert(
                                 title: Text("You finished!"),
