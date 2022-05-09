@@ -88,17 +88,18 @@ struct ContentView: View {
         // Lower
         lowerScore = 0
         for index in 0...6 {
+            if(index == 5 && self.lowerCategories[5].isCompleted && self.lowerCategories[5].score == 50) {
+                self.lowerCategories[5].score = tempScores[index + 6]
+                self.lowerCategories[5].isCompleted = false
+                numYahtzees += 1
+            }
             if(!self.lowerCategories[index].isCompleted) {
                 self.lowerCategories[index].score = tempScores[index + 6]
             }
             if(self.lowerCategories[index].isCompleted == true) {
                 lowerScore = lowerScore + self.lowerCategories[index].score
             }
-            if(index == 5 && self.lowerCategories[5].isCompleted && self.lowerCategories[5].score == 50) {
-                self.lowerCategories[5].score = tempScores[index + 6]
-                self.lowerCategories[5].isCompleted = false
-                numYahtzees += 1
-            }
+            
         }
     }
     
